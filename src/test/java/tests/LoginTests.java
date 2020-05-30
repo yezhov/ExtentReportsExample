@@ -3,7 +3,6 @@ package tests;
 import java.lang.reflect.Method;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import utils.ExtentReports.ExtentTestManager;
 
 public class LoginTests extends BaseTest {
 
@@ -16,7 +15,7 @@ public class LoginTests extends BaseTest {
     @Test(priority = 0, description = "Invalid Login Scenario with wrong username and password.")
     public void invalidLoginTest_InvalidUserNameInvalidPassword(Method method) {
 //        ExtentReports Description
-        ExtentTestManager.startTest(method.getName(), "Invalid Login Scenario with invalid username and password.");
+//        ExtentTestManager.startTest(method.getName(), "Invalid Login Scenario with invalid username and password.");
 
         Assert.assertEquals("Onur", "Onur");
 
@@ -31,7 +30,7 @@ public class LoginTests extends BaseTest {
     @Test(priority = 1, description = "Invalid Login Scenario with empty username and password.")
     public void invalidLoginTest_EmptyUserEmptyPassword(Method method) {
         //ExtentReports Description
-        ExtentTestManager.startTest(method.getName(), "Invalid Login Scenario with empty username and password.");
+//        ExtentTestManager.startTest(method.getName(), "Invalid Login Scenario with empty username and password.");
 
         Assert.assertEquals("Baskirt", "Baskirt");
 
