@@ -1,7 +1,6 @@
 package tests;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -17,17 +16,17 @@ public class BaseTest {
 
     @BeforeClass
     public void classLevelSetup() {
-        driver = new ChromeDriver();
+//        driver = new ChromeDriver();
     }
 
     @BeforeMethod
     public void methodLevelSetup() {
-        homePage = new HomePage(driver);
+//        homePage = new HomePage(driver);
     }
 
     @AfterClass
     public void teardown() {
-        driver.quit();
+//        driver.quit();
     }
 
 }

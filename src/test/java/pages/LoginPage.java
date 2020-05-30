@@ -6,19 +6,25 @@ import org.testng.Assert;
 
 public class LoginPage extends BasePage {
 
-    /**Constructor*/
+    /**
+     * Constructor
+     */
     public LoginPage(WebDriver driver) {
         super(driver);
     }
 
-    /**Web Elements*/
-    By userNameId = By.id("email");
-    By passwordId = By.id("password");
-    By loginButtonId = By.id("loginButton");
+    /**
+     * Web Elements
+     */
+    By userNameId                = By.id("email");
+    By passwordId                = By.id("password");
+    By loginButtonId             = By.id("loginButton");
     By errorMessageUsernameXpath = By.xpath("//*[@id=\"loginForm\"]/div[1]/div/div");
     By errorMessagePasswordXpath = By.xpath("//*[@id=\"loginForm\"]/div[2]/div/div");
 
-    /**Page Methods*/
+    /**
+     * Page Methods
+     */
     public LoginPage loginToN11(String username, String password) {
         writeText(userNameId, username);
         writeText(passwordId, password);
@@ -37,5 +43,4 @@ public class LoginPage extends BasePage {
         Assert.assertEquals(readText(errorMessagePasswordXpath), expectedText);
         return this;
     }
-
 }
