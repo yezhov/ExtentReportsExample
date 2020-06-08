@@ -19,12 +19,12 @@ public class LoginTests extends BaseTest {
 
         Assert.assertEquals("Onur", "Onur");
 
-//        homePage
-//            .goToN11()
-//            .goToLoginPage()
-//            .loginToN11("asdasdas", "111")
-//            .verifyLoginUserName("Lütfen geçerli bir e-posta adresi girin.")
-//            .verifyLoginPassword("Girilen değer en az 6 karakter olmalıdır.");
+        homePage
+            .goToN11()
+            .goToLoginPage()
+            .loginToN11("asdasdas", "111")
+            .verifyLoginUserName("Lütfen geçerli bir e-posta adresi girin.")
+            .verifyLoginPassword("Girilen değer en az 6 karakter olmalıdır.");
     }
 
     @Test(priority = 1, description = "Invalid Login Scenario with empty username and password.")
@@ -34,11 +34,11 @@ public class LoginTests extends BaseTest {
 
         Assert.assertEquals("Baskirt", "Baskirt");
 
-        //        homePage
-//            .goToN11()
-//            .goToLoginPage()
-//            .loginToN11("", "")
-//            .verifyLoginUserName("Lütfen e-posta adresinizi girin.")
-//            .verifyLoginPassword("WRONG MESSAGE FOR FAILURE!");
+                homePage
+            .goToN11()
+            .goToLoginPage()
+            .loginToN11("", "")
+            .verifyLoginUserName("Lütfen e-posta adresinizi girin.")
+            .verifyLoginPassword("WRONG MESSAGE FOR FAILURE!");
     }
 }
