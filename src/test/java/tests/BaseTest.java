@@ -17,17 +17,16 @@ public class BaseTest {
 
     @BeforeClass
     public void classLevelSetup() {
-        driver = new ChromeDriver();
+//        driver = new ChromeDriver();
     }
 
     @BeforeMethod
     public void methodLevelSetup() {
-        homePage = new HomePage(driver);
+//        homePage = new HomePage(driver);
     }
 
     @AfterClass
     public void teardown() {
-        driver.quit();
+//        driver.quit();
     }
-
 }

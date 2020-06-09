@@ -49,15 +49,15 @@ public class TestListener extends BaseTest implements ITestListener {
 
         //Get driver from BaseTest and assign to local webDriver variable.
         Object testClass = iTestResult.getInstance();
-        WebDriver webDriver = ((BaseTest) testClass).getDriver();
+//        WebDriver webDriver = ((BaseTest) testClass).getDriver();
 
         //Take base64Screenshot screenshot.
-        String base64Screenshot = "data:image/png;base64," + ((TakesScreenshot) webDriver).
-            getScreenshotAs(OutputType.BASE64);
+//        String base64Screenshot = "data:image/png;base64," + ((TakesScreenshot) webDriver).
+//            getScreenshotAs(OutputType.BASE64);
 
         //ExtentReports log and screenshot operations for failed tests.
-        ExtentTestManager.getTest().log(LogStatus.FAIL, "Test Failed",
-            ExtentTestManager.getTest().addBase64ScreenShot(base64Screenshot));
+        ExtentTestManager.getTest().log(LogStatus.FAIL, "Test Failed");
+//            ExtentTestManager.getTest().addBase64ScreenShot(base64Screenshot));
     }
 
     @Override
