@@ -4,6 +4,7 @@ import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import utils.logs.JSErrorLogs;
 import utils.logs.Log;
@@ -23,11 +24,24 @@ public class LoginPage extends BasePage {
     By passwordId                = By.id("password");
     By loginButtonId             = By.id("loginButton");
     By errorMessageUsernameXpath = By.xpath("//*[@id=\"loginForm\"]/div[1]/div/div");
-    By errorMessagePasswordXpath = By.xpath("//*[@id=\"loginForm\"]/div[2]/div/div ");
+    By errorMessagePasswordXpath = By.xpath("//*[@id=\"loginForm\"]/div[2]/div/div");
+    By accept = By.cssSelector(".banner__accept-button");
 
     /**
      * Page Methods
      */
+
+    public LoginPage acceptCookiesPrompt() throws InterruptedException {
+        Log.info("Accept cookies prompt");
+        //This Element is inside single shadow DOM.
+        String cssSelectorForHost1 = ".efilli-layout-n11";
+        Thread.sleep(1000);
+        SearchContext shadow = driver.findElement(By.cssSelector(cssSelectorForHost1)).getShadowRoot();
+        Thread.sleep(1000);
+        shadow.findElement(accept).click();
+        return this;
+    }
+
     public LoginPage loginToN11(String username, String password) {
         Log.info("Trying to login the N11.");
         writeText(userNameId, username);

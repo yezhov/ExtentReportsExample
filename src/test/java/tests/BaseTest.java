@@ -30,6 +30,7 @@ public class BaseTest {
     @AfterClass
     public void teardown() {
         Log.info("Tests are ending!");
+        driver.close();
         driver.quit();
     }
 }
